@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/estilos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Moon+Dance&display=swap" rel="stylesheet">
+    <title>Club de Detectives</title>
+    <!-- agregar favicon -->
+  </head>
+  <body>
+    <header>
+      <h1>Club de Detectives</h1>
+    </header>
+    
+    <section id="club_info">
+      <p>Unite al club y ..........
+      </p>
+    </section>
+    
+    <form action="servlet_form" id="register_form" name="register_form" method="POST">
+      <div class="form_container">
+        <div class="left-col">
+          <div class="form_field">
+            <label for="nombre">nombre</label>
+            <input type="text" id="nombre" required="true"/>
+          </div>
+          <div class="form_field">
+            <label for="apellido">apellido</label>
+            <input type="text" id="apellido" required="true"/>
+          </div>
+          <div class="form_field">
+            <label for="mail">mail</label>
+            <input type="email" id="mail" required="true"/>
+          </div>
+        </div>
+        <div class="right-col">
+          <div class="form_field">
+            <label for="password">contraseña</label>
+            <input type="password" id="password" required="true"/>
+          </div>
+          <div class="form_field">
+            <label for="password_repeat">repeti contraseña</label>
+            <input type="password" id="password_repeat" required="true"/> 
+          </div>
+          <!-- PRUEBA -->
+          <span id="password_validation"></span>
+          
+          <div class="form_field">
+            <label for="pais">pais</label>
+            <select name="pais" id="pais" required><!-- keeeeee -->
+              <option selected="true" disabled>selecciona</option>
+              <option value="argentina">argentina</option>
+              <option value="chile">chile</option>  
+              <option value="paraguay">paraguay</option>
+              <option value="uruguay">uruguay</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="newsletter">
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Suscribirse al newsletter</label>
+      </div>
+      <div class="register">
+        
+        <button onclick="passwordValidation()">Registrarse</button>
+        <!--<button type="submit">Registrarse</button>-->
+      </div>
+    </form>
+    <div class="login">
+      <img src="recursos/fingerprint-scan.png" id="fingerprint">
+      <button>¿Ya tenés cuenta? Ingresá</button>
+    </div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
