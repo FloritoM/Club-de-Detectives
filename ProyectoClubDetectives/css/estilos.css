@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
-*, *::before {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap');
+
+*{
   /*the padding and eventually borders are included in the total width and height of the elements*/
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +9,7 @@
   font-family: 'Roboto Mono', monospace;
 }
 body {
-  background-image: url(/recursos/background.jpg);
+  background-image: url(/recursos/crime-investigation.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -18,11 +19,11 @@ h1{
   font-family: 'Island Moments', cursive;
   font-size: 150px;
   text-align: center;
-  color: rgb(163, 40, 40);
+  color: rgb(209, 21, 21);
   text-shadow: 0 0 3px black;
 }
 p{
-  width: 75%;
+  width: 30%;
   margin: auto;
   text-align: center;
   font-size: 30px;
@@ -142,7 +143,7 @@ input[type="password"]::selection{
   justify-content: center;
   margin: auto;
   margin-bottom: 20px;
-  background-color: rgba(180, 180, 174, 0.5);
+  background-color: rgba(180, 180, 174, 1);
 }
 .login img{
   width: 80px;
@@ -160,8 +161,12 @@ input[type="password"]::selection{
 .login button:hover{
   color: white;
 }
-/*PRUEBAAAAAAAAAAA*/
 #password_validation{
+  margin-top: -20px;
+  margin-left: 9px;
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
   color: red;
 }
 @media screen and (max-width: 1150px) {
