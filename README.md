@@ -1,2 +1,6 @@
 (proyecto en construcción 🛠️)
-- Usé la tríada: HTML, CSS y JS como script para la validación de los datos del formulario
+- Front: HTML, CSS y JS básico para la validación de la contraseña del formulario
+- Back: Java + SpringBoot + MySQL
+
+index.html: formulario para registrarse y link para hacer login
+
