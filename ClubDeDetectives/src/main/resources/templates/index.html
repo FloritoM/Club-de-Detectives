@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/styles.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Moon+Dance&display=swap" rel="stylesheet"/>
+        <script src="https://kit.fontawesome.com/579d3f2a89.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Club de Detectives</title>
+        <!-- agregar favicon -->
+    </head>
+    <body>
+        <header>
+            <h1>Club de Detectives</h1>
+        </header>
+
+        <section id="club_info">
+            <p>Formulario de Registro</p>
+        </section>
+        <!-- <form th:action="@{/register}" method="POST" th:object="${persona}"> -->
+        <form th:action="@{/register}" id="register_form" name="register_form" method="POST" th:object="${user}">
+            <div class="form_container">
+                <div class="left-col">
+                    <div class="form_field">
+                        <label for="nombre">nombre</label>
+                        <input type="text" id="nombre" th:name="nombre" required="true"/>
+                    </div>
+                    <div class="form_field">
+                        <label for="apellido">apellido</label>
+                        <input type="text" id="apellido" th:name="apellido" required="true"/>
+                    </div>
+                    <div class="form_field">
+                        <label for="mail">mail</label>
+                        <input type="email" id="mail" th:name="mail" required="true"/>
+                    </div>
+                    <!-- muestra si el mail ya existe -->
+                </div>
+                <div class="right-col">
+                    <div class="form_field">
+                        <label for="password">contraseña</label>
+                        <div class="password_field">
+                            <input type="password" id="password" th:name="password" required="true"/>
+                            <i class="fa-solid fa-eye password-eye"  id="show_password"></i>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <label for="password_repeat">repeti contraseña</label>
+                        <div class="password_field">
+                            <input type="password" id="password_repeat" required="true"/> 
+                            <!--<i class="fa-solid fa-eye password-eye " id="show_passwordRepeat"></i>-->
+                        </div>
+                    </div>
+
+                    <div id="password_validation"></div>
+
+                    <div class="form_field">
+                        <label for="pais">pais</label>
+                        <select name="pais" id="pais" th:name="pais" required><!-- keeeeee -->
+                            <option selected="true" disabled>selecciona</option>
+                            <option value="argentina">argentina</option>
+                            <option value="chile">chile</option>  
+                            <option value="paraguay">paraguay</option>
+                            <option value="uruguay">uruguay</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- 
+            <div class="newsletter">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Suscribirse al newsletter</label>
+            </div>-->
+            <div class="register">
+
+                <button type="submit">Registrarse</button>
+            </div> 
+        </form>
+        
+        <div class="login">
+            <img src="fingerprint-scan.png" id="fingerprint">
+            <a th:href="@{/login}">¿Ya tenés cuenta? Ingresá</a>
+        </div>
+        
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

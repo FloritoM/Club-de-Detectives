@@ -9,7 +9,7 @@
   font-family: 'Roboto Mono', monospace;
 }
 body {
-  background-image: url(/recursos/crime-investigation.jpg);
+  background-image: url(crime-investigation.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -133,7 +133,7 @@ input[type="password"]::selection{
 }
 .register button:hover{
   background-color: grey;
-  color: white;
+  color: b;
   border: 2px inset rgb(121, 114, 114);
 }
 .login{
@@ -149,7 +149,7 @@ input[type="password"]::selection{
   width: 80px;
   padding: 10px;
 }
-.login button{
+.login a{
   color: rgb(163, 40, 40);
   font-weight: bolder;
   font-size: 20px;
@@ -158,8 +158,8 @@ input[type="password"]::selection{
   background-color: transparent;
   cursor: pointer;
 }
-.login button:hover{
-  color: white;
+.login a:hover{
+  color: black;
 }
 #password_validation{
   margin-top: -20px;
@@ -169,6 +169,17 @@ input[type="password"]::selection{
   font-weight: bold;
   color: red;
 }
+/*CAMBIAR ABAJO*/
+.password_field{
+  display: flex;
+  flex-direction: row;
+}
+.password-eye{
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1150px) {
   h1{
     line-height: 100px;
