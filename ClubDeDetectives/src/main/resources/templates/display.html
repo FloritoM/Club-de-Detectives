@@ -12,7 +12,12 @@
         <title>Club de Detectives</title>
     </head>
     <body>
-        <div>Te registraste con éxito!</div>
+        
+        <h1>Result</h1>
+        <p th:text="'mail: ' + ${user.mail}" />
+        <p th:text="'nombre: ' + ${user.nombre}" />
+        <p th:text="'pais: ' + ${user.pais}" />
+        <a href="/index">Submit another message</a>
         
         
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

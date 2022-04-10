@@ -14,7 +14,7 @@
         <title>Club de Detectives</title>
         <!-- agregar favicon -->
     </head>
-    <body>
+<body>
         <header>
             <h1>Club de Detectives</h1>
         </header>
@@ -22,29 +22,30 @@
         <section id="club_info">
             <p>Formulario de Registro</p>
         </section>
-        <!-- <form th:action="@{/register}" method="POST" th:object="${persona}"> -->
-        <form th:action="@{/register}" id="register_form" name="register_form" method="POST" th:object="${user}">
+        
+        <form action="#" th:action="@{/registration}" id="register_form" name="register_form" method="POST" th:object="${user}">
             <div class="form_container">
                 <div class="left-col">
                     <div class="form_field">
                         <label for="nombre">nombre</label>
-                        <input type="text" id="nombre" th:name="nombre" required="true"/>
+                        <input type="text" id="nombre" th:name="nombre" th:field="*{nombre}" required/>
                     </div>
                     <div class="form_field">
                         <label for="apellido">apellido</label>
-                        <input type="text" id="apellido" th:name="apellido" required="true"/>
+                        <input type="text" id="apellido" th:name="apellido" th:field="*{apellido}" required/>
                     </div>
                     <div class="form_field">
                         <label for="mail">mail</label>
-                        <input type="email" id="mail" th:name="mail" required="true"/>
+                        <input type="email" id="mail" th:name="mail" th:field="*{mail}" required=/>
+                        <div id="mail_check"></div>
                     </div>
-                    <!-- muestra si el mail ya existe -->
+                     
                 </div>
                 <div class="right-col">
                     <div class="form_field">
                         <label for="password">contraseña</label>
                         <div class="password_field">
-                            <input type="password" id="password" th:name="password" required="true"/>
+                            <input type="password" id="password" th:name="password" th:field="*{password}" required/>
                             <i class="fa-solid fa-eye password-eye"  id="show_password"></i>
                         </div>
                     </div>
@@ -52,31 +53,20 @@
                         <label for="password_repeat">repeti contraseña</label>
                         <div class="password_field">
                             <input type="password" id="password_repeat" required="true"/> 
-                            <!--<i class="fa-solid fa-eye password-eye " id="show_passwordRepeat"></i>-->
                         </div>
                     </div>
 
                     <div id="password_validation"></div>
-
+                    
                     <div class="form_field">
                         <label for="pais">pais</label>
-                        <select name="pais" id="pais" th:name="pais" required><!-- keeeeee -->
-                            <option selected="true" disabled>selecciona</option>
-                            <option value="argentina">argentina</option>
-                            <option value="chile">chile</option>  
-                            <option value="paraguay">paraguay</option>
-                            <option value="uruguay">uruguay</option>
+                        <select name="pais" id="pais" th:name="country" th:field="*{pais}" required> 
+                            <option th:each="country :${countries}" th:text="${country}" th:value="${country}">
                         </select>
                     </div>
                 </div>
             </div>
-            <!-- 
-            <div class="newsletter">
-                <input type="checkbox" id="newsletter" name="newsletter">
-                <label for="newsletter">Suscribirse al newsletter</label>
-            </div>-->
             <div class="register">
-
                 <button type="submit">Registrarse</button>
             </div> 
         </form>

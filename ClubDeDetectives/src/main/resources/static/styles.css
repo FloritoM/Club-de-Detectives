@@ -161,6 +161,11 @@ input[type="password"]::selection{
 .login a:hover{
   color: black;
 }
+#mail_check{
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
 #password_validation{
   margin-top: -20px;
   margin-left: 9px;
