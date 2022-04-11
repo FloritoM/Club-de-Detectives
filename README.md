@@ -3,6 +3,7 @@
 - Back: Java + SpringBoot + Thymeleaf + MySQL
 
 Se ejecuta desde: localhost:8080/registration
+- /registration: formulario para crear usuario y con link para hacer login si ya se tiene una cuenta
 
 APRENDIENDO SPRING BOOT - PROYECTO EN PROCESO
 
