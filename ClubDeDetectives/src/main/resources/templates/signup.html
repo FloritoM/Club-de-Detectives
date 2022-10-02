@@ -23,12 +23,12 @@
             <p>Formulario de Registro</p>
         </section>
         
-        <form action="#" th:action="@{/registration}" id="register_form" name="register_form" method="POST" th:object="${user}">
+        <form action="#" th:action="@{/register}" id="register_form" name="register_form" method="POST" th:object="${user}">
             <div class="form_container">
                 <div class="left-col">
                     <div class="form_field">
                         <label for="nombre">nombre</label>
-                        <input type="text" id="nombre" th:name="nombre" th:field="*{nombre}" required/>
+                        <input type="text" id="nombre" th:name="nombre" th:field="*{nombre}" required/> // es necesario th:field etc?
                     </div>
                     <div class="form_field">
                         <label for="apellido">apellido</label>
@@ -37,7 +37,7 @@
                     <div class="form_field">
                         <label for="mail">mail</label>
                         <input type="email" id="mail" th:name="mail" th:field="*{mail}" required=/>
-                        <div id="mail_check"></div>
+                        <div id="mail_check" th:text="${errorMSG}"></div>
                     </div>
                      
                 </div>
@@ -57,11 +57,22 @@
                     </div>
 
                     <div id="password_validation"></div>
-                    
+                    <!--
                     <div class="form_field">
                         <label for="pais">pais</label>
                         <select name="pais" id="pais" th:name="country" th:field="*{pais}" required> 
                             <option th:each="country :${countries}" th:text="${country}" th:value="${country}">
+                        </select>
+                    </div> 
+                    -->
+                    <div class="form_field">
+                        <label for="pais">pais</label>
+                        <select name="pais" id="pais" th:name="pais" required><!-- keeeeee -->
+                            <option selected="true" disabled>selecciona</option>
+                            <option value="argentina">argentina</option>
+                            <option value="chile">chile</option>  
+                            <option value="paraguay">paraguay</option>
+                            <option value="uruguay">uruguay</option>
                         </select>
                     </div>
                 </div>
